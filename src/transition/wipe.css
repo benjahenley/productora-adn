@@ -1,0 +1,141 @@
+/* Smooth, GPU-friendly wipe using three sweeping blocks with bounce. */
+/* ENTER ANIMATIONS - Blocks slide in from right */
+@keyframes wipeBlockFastIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes wipeBlockCoverIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes wipeBlockBounceIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* EXIT ANIMATIONS - Blocks slide out to left */
+@keyframes wipeBlockFastOut {
+  from {
+    transform: translateX(-5%);
+  }
+  to {
+    transform: translateX(-110%);
+  }
+}
+
+@keyframes wipeBlockCoverOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-110%);
+  }
+}
+
+@keyframes wipeBlockBounceOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
+
+:root {
+  /* Tunables */
+  --wipe-duration-in-1: 600ms; /* front block enter */
+  --wipe-duration-in-2: 650ms; /* cover block enter */
+  --wipe-duration-in-3: 850ms; /* gray block enter (slower, smoother) */
+  --wipe-delay-in-2: 100ms; /* stagger for second block */
+  --wipe-delay-in-3: 200ms; /* stagger for third block */
+
+  --wipe-duration-out-1: 550ms; /* front block exit */
+  --wipe-duration-out-2: 600ms; /* cover block exit */
+  --wipe-duration-out-3: 650ms; /* gray block exit */
+  --wipe-delay-out-2: 80ms; /* stagger for second block exit */
+  --wipe-delay-out-3: 150ms; /* stagger for third block exit */
+
+  --wipe-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --wipe-ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Overlay root that hosts the blocks */
+.wipe-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647; /* over everything */
+  pointer-events: none;
+  contain: strict;
+}
+
+/* Each block is full-viewport */
+.wipe-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+}
+
+/* ENTER PHASE - Blocks slide in */
+.wipe-block.front.entering {
+  background: #000;
+  animation: wipeBlockFastIn var(--wipe-duration-in-1) var(--wipe-ease) 0ms 1
+    forwards;
+}
+
+.wipe-block.cover.entering {
+  background: #000;
+  animation: wipeBlockCoverIn var(--wipe-duration-in-2) var(--wipe-ease)
+    var(--wipe-delay-in-2) 1 forwards;
+}
+
+.wipe-block.gray-bounce.entering {
+  background: #404040;
+  animation: wipeBlockBounceIn var(--wipe-duration-in-3) var(--wipe-ease-smooth)
+    var(--wipe-delay-in-3) 1 forwards;
+}
+
+/* EXIT PHASE - Blocks slide out */
+.wipe-block.front.exiting {
+  background: #000;
+  animation: wipeBlockFastOut var(--wipe-duration-out-1) var(--wipe-ease) 0ms 1
+    forwards;
+}
+
+.wipe-block.cover.exiting {
+  background: #000;
+  animation: wipeBlockCoverOut var(--wipe-duration-out-2) var(--wipe-ease)
+    var(--wipe-delay-out-2) 1 forwards;
+}
+
+.wipe-block.gray-bounce.exiting {
+  background: #404040;
+  animation: wipeBlockBounceOut var(--wipe-duration-out-3)
+    var(--wipe-ease-smooth) var(--wipe-delay-out-3) 1 forwards;
+}
+
+/* Accessibility: minimal motion */
+@media (prefers-reduced-motion: reduce) {
+  .wipe-block.front,
+  .wipe-block.cover,
+  .wipe-block.gray-bounce {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+  }
+}

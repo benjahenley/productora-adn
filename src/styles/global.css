@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/SourceCodePro-VariableFont_wght.ttf")
+      format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/SourceCodePro-Italic-VariableFont_wght.ttf")
+      format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Source Code Pro", monospace;
+  }
+}
+
+@theme {
+  /* Brand: PRIMARY (#e14e2d) */
+  --color-primary-50: #fff2ee;
+  --color-primary-100: #ffe5df;
+  --color-primary-200: #ffcbbf;
+  --color-primary-300: #ffad99;
+  --color-primary-400: #ff8466;
+  --color-primary-500: #f5623f;
+  --color-primary-600: #e14e2d; /* base */
+  --color-primary-700: #c04224;
+  --color-primary-800: #9e361d;
+  --color-primary-900: #7f2c17;
+  --color-primary-950: #3f140a;
+
+  /* Brand: SECONDARY (#c6a679) */
+  --color-secondary-50: #f8f3ea;
+  --color-secondary-100: #f1e7d5;
+  --color-secondary-200: #e4d0ad;
+  --color-secondary-300: #d7b985;
+  --color-secondary-400: #cba66a;
+  --color-secondary-500: #c19a5f;
+  --color-secondary-600: #c6a679; /* base */
+  --color-secondary-700: #ab8f67;
+  --color-secondary-800: #8e7755;
+  --color-secondary-900: #725f44;
+  --color-secondary-950: #3a3022;
+
+  /* Brand: ACCENT (#b0b0b0) */
+  --color-accent-50: #f6f6f6;
+  --color-accent-100: #eeeeee;
+  --color-accent-200: #dfdfdf;
+  --color-accent-300: #c8c8c8;
+  --color-accent-400: #b9b9b9;
+  --color-accent-500: #b0b0b0; /* base */
+  --color-accent-600: #9a9a9a;
+  --color-accent-700: #7f7f7f;
+  --color-accent-800: #666666;
+  --color-accent-900: #4d4d4d;
+  --color-accent-950: #262626;
+
+  /* Background & Text (para usarlos en @layer base) */
+  --color-background: #0e0e0e;
+  --color-text: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Roboto Font for Service Content */
+.font-roboto {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 hover:-translate-y-0.5 hover:shadow-lg focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-primary-600 border-2 border-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+}
+
+/* Card Animation */
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.8) rotateX(15deg);
+  }
+  60% {
+    transform: translateY(10px) scale(1.02) rotateX(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+.animate-fall-in {
+  animation: fallIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--animation-delay, 0s);
+  opacity: 0;
+}
+
+/* Casino-style flip animation */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Scale-in animation for hero title */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 1.2s ease-out forwards;
+}
+
+/* Triple Rhombus Background Effect */
+.triple-rhombus-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.triple-rhombus-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0e0e0e 0%, #121110 100%);
+  z-index: -1;
+}
+
+.triple-rhombus-bg::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background-image: 
+    /* First rhombus */ linear-gradient(
+      45deg,
+      transparent 48%,
+      #e14e2d 49%,
+      #e14e2d 51%,
+      transparent 52%
+    ),
+    /* Second rhombus */
+      linear-gradient(
+        45deg,
+        transparent 48%,
+        #c6a679 49%,
+        #c6a679 51%,
+        transparent 52%
+      ),
+    /* Third rhombus */
+      linear-gradient(
+        45deg,
+        transparent 48%,
+        #b0b0b0 49%,
+        #b0b0b0 51%,
+        transparent 52%
+      );
+  background-size: 200px 200px, 150px 150px, 100px 100px;
+  background-position: 0% 0%, 50% 25%, 25% 75%;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Custom White Scrollbar for Dropdowns */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1);
+}
