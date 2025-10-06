@@ -131,4 +131,25 @@ export const homeServices = [
     slug: "juegos-interactivos",
     icon: "/assets/icons/juegos-interactivos.svg",
   },
+  {
+    title: "Marketing Corporativo",
+    description:
+      "Diseños, campañas publicitarias y estrategias integrales para posicionar tu marca",
+    slug: "marketing-corporativo",
+    icon: "/assets/icons/marketing-corporativo.png",
+  },
+  {
+    title: "Cartelería y Diseños",
+    description:
+      "Soluciones gráficas personalizadas que dan vida a tu identidad visual",
+    slug: "carteleria-disenos",
+    icon: "/assets/icons/carteleria-disenos.svg",
+  },
+  {
+    title: "Capacitación Comercial",
+    description:
+      "Entrenamiento especializado para potenciar tu equipo de ventas",
+    slug: "capacitacion-comercial",
+    icon: "/assets/icons/capacitacion-clientes.svg",
+  },
 ];

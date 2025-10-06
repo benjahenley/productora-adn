@@ -34,21 +34,23 @@ export const servicesContent = [
   {
     slug: "sonido",
     title: "Sonido",
-    video: null,
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/Cabina-DJ-2.mp4",
     content:
       "El sonido profesional es fundamental para el éxito de cualquier evento. Contamos con equipamiento de última generación y técnicos especializados que garantizan una calidad de audio cristalina y potente, adaptada a las necesidades específicas de cada espacio. Desde pequeñas conferencias hasta grandes conciertos y festivales, nuestros sistemas de audio line array, monitores de escenario, microfonía inalámbrica y consolas digitales aseguran una cobertura uniforme y una experiencia sonora excepcional. La correcta acústica es esencial para que tu mensaje llegue claro y tu música suene impecable.",
   },
   {
     slug: "iluminacion",
     title: "Iluminación",
-    video: null,
+    video: "https://productoraadn.com.ar/wp-content/uploads/2023/11/Laser3.mp4",
     content:
       "La iluminación profesional transforma espacios y crea atmósferas que potencian la experiencia de cualquier evento. Nuestro servicio incluye tecnología LED de última generación, cabezales móviles inteligentes, par LED, barras arquitecturales y efectos especiales que se adaptan a cada concepto creativo. Ya sea para eventos corporativos, conciertos, obras de teatro, desfiles de moda o celebraciones sociales, diseñamos y ejecutamos propuestas de iluminación que realzan cada momento. La luz es el pincel que dibuja emociones y marca el ritmo de tu evento.",
   },
   {
     slug: "tachos-inalambricos",
     title: "Tachos Inalámbricos",
-    video: null,
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/Bola-led-1-mt.mp4",
     content:
       "Los tachos inalámbricos revolucionan la iluminación de eventos al eliminar la necesidad de cables y conexiones eléctricas tradicionales. Estos equipos funcionan con baterías de larga duración y se controlan remotamente mediante tecnología inalámbrica DMX o WiFi, permitiendo una instalación rápida y flexible en cualquier espacio. Son ideales para iluminar mesas, pasillos, jardines, espacios arquitectónicos y áreas donde el cableado resulta complejo o poco estético. Con tecnología LED RGB+W, los tachos inalámbricos ofrecen millones de combinaciones de colores y efectos programables para crear ambientes personalizados en bodas, eventos corporativos y celebraciones especiales.",
   },
@@ -126,7 +128,8 @@ export const servicesContent = [
   {
     slug: "tubos-madrix",
     title: "Tubos Madrix",
-    video: null,
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/Circulos-LED-planos-Adn-productora-2.mp4",
     content:
       "Los tubos Madrix son elementos LED tubulares controlables pixel por pixel mediante el software Madrix, permitiendo crear efectos visuales dinámicos y personalizados. Estos tubos pueden programarse para mostrar animaciones, ondas de color, efectos de video mapping y sincronización perfecta con música. Son ideales para crear paredes visuales, techos interactivos, columnas luminosas y estructuras geométricas tridimensionales. Su versatilidad los convierte en elementos esenciales para clubes, festivales, eventos corporativos y producciones audiovisuales de vanguardia. Los tubos Madrix transforman estructuras estáticas en lienzos digitales llenos de movimiento y color.",
   },
@@ -153,5 +156,29 @@ export const servicesContent = [
       "https://productoraadn.com.ar/wp-content/uploads/2023/11/22ceec06-00b2-4c10-ac0c-c1de53b5f604.mp4",
     content:
       "Los juegos interactivos son herramientas poderosas para generar engagement, diversión y recordación en eventos. Ofrecemos una amplia variedad que incluye pantallas táctiles con juegos personalizados, photobooth con realidad aumentada, simuladores deportivos, juegos de proyección interactiva en piso y paredes, trivias digitales, ruletas virtuales y experiencias gamificadas con premios. Estos elementos son ideales para activaciones de marca, eventos corporativos, ferias comerciales, fiestas y lanzamientos de productos. La interactividad genera participación activa del público, aumenta el tiempo de permanencia en stands y crea momentos compartibles en redes sociales, amplificando el alcance de tu evento.",
+  },
+  {
+    slug: "marketing-corporativo",
+    title: "Marketing Corporativo",
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/Banners-Adn-productora15_EDIT.mp4",
+    content:
+      "Nuestro servicio de marketing corporativo abarca estrategias integrales de comunicación y publicidad para posicionar tu marca en el mercado. Desarrollamos campañas creativas para medios digitales y tradicionales: diseños para redes sociales, publicidad en televisión, spots de radio, cartelería en rutas y vía pública. Nos especializamos en crear identidad visual coherente que conecte con tu público objetivo a través de todos los puntos de contacto. Desde el concepto creativo hasta la ejecución y medición de resultados, nuestro equipo trabaja para generar impacto, recordación y conversión, adaptando cada pieza al canal específico mientras mantenemos la esencia de tu marca.",
+  },
+  {
+    slug: "carteleria-disenos",
+    title: "Cartelería y Diseños",
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/Telon-LED-con-grafica-1.mp4",
+    content:
+      "El diseño gráfico y la cartelería son elementos fundamentales para comunicar visualmente tu mensaje con impacto. Creamos diseños personalizados para todo tipo de soportes: señalética, carteles publicitarios, banners, pendones, vinilos, afiches, flyers y material promocional. Nuestro equipo de diseñadores desarrolla piezas gráficas que combinan estética y funcionalidad, asegurando legibilidad, coherencia visual y alineación con tu identidad de marca. Ya sea para eventos, puntos de venta, espacios corporativos o campañas publicitarias, cada diseño es pensado estratégicamente para captar la atención del público y transmitir tu mensaje de forma clara y memorable.",
+  },
+  {
+    slug: "capacitacion-comercial",
+    title: "Capacitación Comercial",
+    video:
+      "https://productoraadn.com.ar/wp-content/uploads/2023/11/WhatsApp-Video-2023-08-06-at-21.19.54.mp4",
+    content:
+      "Potenciamos tu equipo comercial con programas de capacitación especializados en técnicas de venta, atención al cliente y estrategias de captación. Nuestros talleres prácticos y dinámicos están diseñados para desarrollar habilidades de comunicación efectiva, manejo de objeciones, cierre de ventas y fidelización de clientes. Utilizamos metodologías modernas que combinan teoría, casos prácticos, role playing y herramientas digitales para garantizar el aprendizaje. Cada capacitación se adapta a las necesidades específicas de tu empresa y sector, generando resultados medibles en el desempeño del equipo comercial y incrementando las conversiones de manera sostenible.",
   },
 ];

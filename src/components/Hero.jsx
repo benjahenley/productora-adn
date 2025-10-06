@@ -45,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-84px)] flex lg:items-center -mt-10 justify-center overflow-hidden">
+    <section className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-84px)] flex lg:items-center  justify-center overflow-hidden">
       {/* YouTube Background Video */}
       {hasYouTubeVideo && (
         <div className="absolute inset-0 w-full h-full z-10 overflow-hidden">

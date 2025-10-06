@@ -1,4 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
+import { useEffect } from "react";
 import { servicesContent } from "../data/servicesContent";
 
 const ServiceDetail = () => {
@@ -6,6 +7,15 @@ const ServiceDetail = () => {
 
   // Find the service by slug
   const service = servicesContent.find((s) => s.slug === slug);
+
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Use "instant" for immediate scroll on mobile
+    });
+  }, [slug]);
 
   // If service not found, redirect to services page
   if (!service) {
